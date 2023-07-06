@@ -11,6 +11,14 @@ app.use(express.json());
 
 // route handlers
 
+// TEST ROUTE
+app.get("/", function (req, res) {
+  res.json({
+    success: true,
+    message: "Test route up and running!",
+  });
+});
+
 // get all restaurants
 app.get("/api/v1/restaurants", async (req, res) => {
   try {
