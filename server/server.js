@@ -1,9 +1,10 @@
-require("dotenv").config();
 const express = require("express");
+const app = express();
 const cors = require("cors");
 const db = require("./db/index");
 // import morgan from "morgan";
-const app = express();
+require("dotenv").config();
+
 
 // middlewear
 app.use(cors());
