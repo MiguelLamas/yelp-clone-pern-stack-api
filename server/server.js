@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // middlewear
 app.use(cors({
-  origin: '*'
+  origin: ['https://yelp-clone-pern-stack-api.onrender.com', 'https://yelp-clone-pern-stack-frontend.onrender.com']
 }));
 app.use(express.json());
 
