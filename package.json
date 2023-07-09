@@ -4,7 +4,7 @@
   "description": "Yelp Clone PERN App",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "build": "npm install && npm run build"
   },
   "keywords": [],
