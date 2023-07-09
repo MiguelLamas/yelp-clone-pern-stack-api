@@ -10,10 +10,10 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-app.get("*", (req, res) => {
-  // res.sendFile(path.join(__dirname, "client/build/index.html"));
-  res.setHeader("Access-Control-Allow-Credentials", "true"); // ignores cors origin errors
-});
+// app.get("*", (req, res) => {
+//   // res.sendFile(path.join(__dirname, "client/build/index.html"));
+//   res.setHeader("Access-Control-Allow-Credentials", "true"); // ignores cors origin errors
+// });
 
 // route handlers
 
