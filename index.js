@@ -1,10 +1,27 @@
 const express = require("express");
+const pg = require("pg");
 const app = express();
 const cors = require("cors");
 const db = require("./db");
 // import morgan from "morgan";
 require("dotenv").config();
 
+const conString = "postgres://pvlxxopo:1oZOxRe-o19OgW9S4LBIwwewXTu94NDw@tyke.db.elephantsql.com/pvlxxopo";
+const client = new pg.Client(conString);
+client.connect(function(err) {
+  if(err) {
+    return console.error('could not connect to postgres', err);
+  }
+  client.query('SELECT NOW() AS "theTime"', function(err, result) {
+    if(err) {
+      return console.error('error running query', err);
+    }
+    console.log('Connected to Database');
+    // console.log(result.rows[0].theTime);
+    // >> output: 2018-08-23T14:02:57.117Z
+    client.end();
+  });
+});
 
 // middlewear
 app.use(cors());
