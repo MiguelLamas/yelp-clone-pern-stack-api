@@ -6,7 +6,7 @@ const pool = new Pool({
 });
 
   const createReviewsTable = async () => await pool.query(
-      "CREATE TABLE todo (id BIGSERIAL PRIMARY KEY NOT NULL, restaurant_id BIGINT NOT NULL REFERENCES restaurants(id), name VARCHAR(50) NOT NULL, review TEXT NOT NULL, rating INT NOT NULL check(rating >=1 and rating <=5)"
+      "CREATE TABLE todo (id BIGSERIAL NOT NULL PRIMARY KEY, restaurant_id BIGINT NOT NULL REFERENCES restaurants(id), name VARCHAR(50) NOT NULL, review TEXT NOT NULL, rating INT NOT NULL check(rating >=1 and rating <=5)"
     );
     
 

@@ -34,7 +34,7 @@ app.get("/", function (req, res) {
 });
 
 // get all restaurants
-app.get("/api/v1/restaurants", async (req, res) => {
+app.get("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants", async (req, res) => {
   try {
     // const results = await db.query("SELECT * FROM restaurants");
     const restaurantRatingsData = await db.query(`SELECT * FROM restaurants LEFT JOIN (SELECT restaurant_id, COUNT(*), 
@@ -54,7 +54,7 @@ app.get("/api/v1/restaurants", async (req, res) => {
 });
 
 // get a specific restaurant
-app.get("/api/v1/restaurants/:id", async (req, res) => {
+app.get("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants/:id", async (req, res) => {
   try {
     const restaurant = await db.query(
       `SELECT * FROM restaurants LEFT JOIN (SELECT restaurant_id, COUNT(*), 
@@ -80,7 +80,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
 });
 
 // create a restaurant
-app.post("/api/v1/restaurants", async (req, res) => {
+app.post("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants", async (req, res) => {
   console.log(req.body);
   try {
     const results = await db.query(
@@ -100,7 +100,7 @@ app.post("/api/v1/restaurants", async (req, res) => {
 });
 
 // update a restaurant
-app.put("/api/v1/restaurants/:id", async (req, res) => {
+app.put("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants/:id", async (req, res) => {
   try {
     const results = await db.query(
       "UPDATE restaurants SET name = $1, location = $2, price_range = $3 WHERE id = $4 RETURNING *",
@@ -118,7 +118,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
 });
 
 // delete restaurant
-app.delete("/api/v1/restaurants/:id", async (req, res) => {
+app.delete("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants/:id", async (req, res) => {
   try {
     const results = await db.query("DELETE FROM restaurants WHERE id = $1", [
       req.params.id,
@@ -132,7 +132,7 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
 });
 
 // add review
-app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
+app.post("https://yelp-clone-pern-stack-api.onrender.com/api/v1/restaurants/:id/addReview", async (req, res) => {
   try {
     const newReview = await db.query(
       "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) RETURNING *;",
