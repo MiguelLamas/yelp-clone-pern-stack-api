@@ -6,7 +6,7 @@ const db = require("./db");
 // import morgan from "morgan";
 require("dotenv").config();
 
-const conString = "postgres://pvlxxopo:1oZOxRe-o19OgW9S4LBIwwewXTu94NDw@tyke.db.elephantsql.com/pvlxxopo";
+const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect(function(err) {
   if(err) {
