@@ -36,7 +36,7 @@ app.use(cors());
 //   "Origin, X-Requested-With, Content_Type, Accept, Authorization"
 //   );
 //   next();
-})
+// })
 app.use(express.json());
 
 
