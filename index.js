@@ -88,7 +88,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
       status: "Success",
       data: {
         restaurant: restaurant.rows[0],
-        reviews: reviews.rows,
+        reviews: reviews.rows[0],
       },
     });
   } catch (err) {
