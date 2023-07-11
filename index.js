@@ -25,17 +25,17 @@ client.connect(function(err) {
 
 // middlewear
 app.use(cors());
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Methods", 
-  "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-  );
-  res.header
-  ("Access-Control-Allow-Headers", 
-  "Origin, X-Requested-With, Content_Type, Accept, Authorization"
-  );
-  next();
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Methods", 
+//   "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+//   );
+//   res.header
+//   ("Access-Control-Allow-Headers", 
+//   "Origin, X-Requested-With, Content_Type, Accept, Authorization"
+//   );
+//   next();
 })
 app.use(express.json());
 
@@ -165,11 +165,6 @@ app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
     console.log(err);
   }
 });
-
-// app.get("*", (req, res) => {
-//   // res.sendFile(path.join(__dirname, "client/build/index.html"));
-//   res.setHeader("Access-Control-Allow-Credentials", "true"); // ignores cors origin errors
-// });
 
 
 const port = process.env.PORT || 5001;
