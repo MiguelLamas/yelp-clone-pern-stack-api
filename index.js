@@ -166,21 +166,6 @@ app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
   }
 });
 
-// delete review
-app.delete("/api/v1/restaurants/:id/addReview/:id", async (req, res) => {
-  try {
-    const results = await db.query(`DELETE FROM reviews WHERE reviews.restaurant_id = restaurants.id;`, [
-      req.params.id,
-    ]);
-    res.status(204).json({
-      status: "Success",
-    });
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log(`Server is up and listening on port ${port}`);
