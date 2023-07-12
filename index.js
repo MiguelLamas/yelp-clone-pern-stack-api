@@ -126,7 +126,7 @@ app.put("/api/v1/restaurants/:id", async (req, res) => {
     res.status(200).json({
       status: "Success",
       data: {
-        restaurant: results.rows[0],
+        restaurant: results.rows,
       },
     });
   } catch (err) {
@@ -160,6 +160,20 @@ app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
       data: {
         review: newReview.rows[0],
       },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// delete review
+app.delete("/api/v1/restaurants/:id/addReview/:id", async (req, res) => {
+  try {
+    const results = await db.query(`DELETE FROM reviews WHERE reviews.restaurant_id = restaurants.id WHERE id = $1;`, [
+      req.params.id,
+    ]);
+    res.status(204).json({
+      status: "Success",
     });
   } catch (err) {
     console.log(err);
