@@ -41,7 +41,7 @@ INSERT INTO restaurants (id, name, location, price_range) values (123, 'McDonald
 -- CREATE TABLE REVIEWS
 CREATE TABLE reviews (
     id BIGSERIAL NOT NULL PRIMARY KEY,
-    restaurant_id BIGINT NOT NULL REFERENCES restaurants(id),
+    restaurant_id BIGINT NOT NULL REFERENCES restaurants(id) ON DELETE CASCADE ON UPDATE CASCADE,
     name VARCHAR(50) NOT NULL,
     review TEXT NOT NULL,
     rating INT NOT NULL check(rating >=1 and rating <=5)
