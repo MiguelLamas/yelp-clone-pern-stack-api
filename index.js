@@ -85,7 +85,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
     );
 
     res.status(200).json({
-      status: "Success",
+       status: "Success",
       data: {
         restaurant: restaurant.rows[0],
         reviews: reviews.rows,
@@ -95,7 +95,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
     console.log(err);
   }
 });
-
+ 
 // create a restaurant
 app.post("/api/v1/restaurants", async (req, res) => {
   console.log(req.body);
