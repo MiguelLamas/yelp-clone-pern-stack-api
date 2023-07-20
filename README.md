@@ -78,10 +78,14 @@ The front end is deployed using Render, however you will need to follow the step
 1. Git clone the frontend repository.
 
 ```bash
-  git clone https://github.com/MiguelLamas/yelp-clone-pern-stack-frontend
+  git clone https://github.com/MiguelLamas/yelp-clone-pern-stack-frontend.git
 ```
 
-2. Remember to navigate to the correct folder: yelp-clone-pern-stack-frontend
+2. Remember to navigate to the correct folder.
+
+```bash
+  cd yelp-clone-pern-stack-frontend.git
+```
 
 3. Install all necessary dependencies by running the following command in the terminal.
 
@@ -110,8 +114,6 @@ To run tests, run the following command
 <br />
 
 ---
-
-<br/>
 
 ## **Tech Stack:**
 
