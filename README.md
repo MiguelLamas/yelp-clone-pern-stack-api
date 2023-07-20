@@ -1,10 +1,12 @@
+<br />
+
 # YELP CLONE - Backend (PERN Stack - Postgres, Express, React, and Node)
 
 A basic Yelp Clone App built with the PERN stack technologies. The application allows users to add restaurants, their location and price range initially. The user can then add reviews and ratings to each restaurant, as well as update and delete individual restaurants. The app takes into account the ratings provided by users and returns an average ratings score for each one aswell as a total of the number of reviews submitted.
 
-This repository holds the code to make our API, it runs on an Express Server, making queries to a POSTGRESQL Database. The credentials for the database will be stored in your environment variables.
+This repository holds the code to make our API, it runs on an Express Server, making queries to a PostgreSQL Database. The credentials for the database will be stored in your environment variables.
 
-The server handles requests to a database with 2 tables that allows for users to add and update restaurant details as well as adding reviews.
+The server handles requests to a database with 2 tables that allows for users to add and update restaurant details, as well as adding reviews for each one.
 
 **This README is for the Backend of the YELP Clone app. If you would like to explore the Frontend of the app please go to the [Frontend repository](https://github.com/MiguelLamas/yelp-clone-pern-stack-frontend)**
 
@@ -12,27 +14,19 @@ The server handles requests to a database with 2 tables that allows for users to
 
 ---
 
-<br />
-
-
-
-<br/>
-
----
-
-<br />
-
-# **_Environment Variables_**
+# **Environment Variables**
 
 To run this project locally, you will need to add the following environment variables to your .env file
 
+```bash
 DATABASE_URL
-
-<br/>
+```
 
 <br />
 
-# **_Run Locally_**
+---
+
+# **Run Locally**
 
 Clone the project
 
@@ -77,9 +71,7 @@ To populate the tables you can achieve this by interacting with the front end UI
 
 ---
 
-<br />
-
-**Frontend**
+# **Frontend**
 
 The front end is deployed using Render, however you will need to follow the steps below if you would like to run it locally.
 
@@ -107,9 +99,7 @@ The front end is deployed using Render, however you will need to follow the step
 
 ---
 
-<br/>
-
-# **_Running Tests_**
+# **Running Tests**
 
 To run tests, run the following command
 
