@@ -65,7 +65,7 @@ npm run createRestaurantsTable
 npm run createReviewsTable
 ```
 
-To populate the tables you can achieve this by interacting with the front end UI [here](https://yelp-clone-pern-stack-frontend.onrender.com/). If you would like to run the front end locally, please follow the instructions in the next section.
+To populate the tables you can achieve this by interacting with the front end UI [https://yelp-clone-pern-stack-frontend.onrender.com/](https://yelp-clone-pern-stack-frontend.onrender.com/). If you would like to run the front end locally, please follow the instructions in the next section.
 
 <br/>
 
