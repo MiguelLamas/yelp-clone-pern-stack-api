@@ -71,7 +71,7 @@ To populate the tables you can achieve this by interacting with the front end UI
 
 ---
 
-# **Frontend**
+# **Frontend:**
 
 The front end is deployed using Render, however you will need to follow the steps below if you would like to run it locally.
 
@@ -99,7 +99,7 @@ The front end is deployed using Render, however you will need to follow the step
 
 ---
 
-# **Running Tests**
+# **Running Tests:**
 
 To run tests, run the following command
 
@@ -113,19 +113,20 @@ To run tests, run the following command
 
 <br/>
 
-## **_Tech Stack:_**
+## **Tech Stack:**
 
-**Frontend**
+**Frontend:**
 - React.js, JavaScript, HTML, Bootstrap 5
 
-**Backend**
+**Backend:**
 - Node.js, Express, PostgreSQL, CORS
+
+**Deployed with:**
+- Render (for API Web Service & Frontend Static Site) and ElephantSQL (for PostgreSQL Database)
 
 <br/>
 
 ---
-
-<br />
 
 ## API Reference
 
