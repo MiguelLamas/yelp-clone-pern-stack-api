@@ -130,218 +130,33 @@ To run tests, run the following command
 
 ---
 
-## API Reference
+## **API Reference:**
 
-<br/>
+### Restaurants Table
 
-### Pets Table
-
-<br/>
-
-#### Get all pets belonging to a user
-
+#### Get all restaurants
 
 ```http
-  GET /pets/${user_id}
+  GET /api/v1/restaurants
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `user_id` | `string` | **Required**. User ID associated with account |
-
 <br/>
 
-#### Get the info of a single pet belonging to a user
+#### Get a specific restaurant
 
 ```http
-  GET /pets/${user_id}?pet_id=${pet_id}
+  GET /api/v1/restaurants/:id
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `user_id` | `string` | **Required**. User ID associated with account |
-| `pet_id`  | `string` | **Required**. Pet ID |
+| `id` | `Integer` | **Required**. Restaurant ID associated with restaurant |
 
 <br />
 
-#### Get the info of a single pet 
+WIP
 
-```http
-  GET /pets?pet_id=${pet_id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `pet_id`  | `string` | **Required**. Pet ID |
-
-<br />
-
-#### Post the data for a new pet 
-
-```http
-  POST /pets
-```
-
-| Parameter  | Type      | Description                                      |
-| :--------  | :-------  | :-------------------------------- |
-| `body`     | `JSON`    | **Required**. JSON object containing pet details |
-| `user_id`  | `string`  | **Required**. ID associated with user account (Front End obtains this from Auth0)|
-| `pet_id`   | `string`  | **Required**. ID associated with the pet (Front End generates this with nanoid)|
-| `name`     | `string`  | **Required**. Name of Pet |
-| `species`  | `boolean` | **Required**. Species of pet true is Cat, false is Dog |
-| `breed`    | `string`  | Breed of Pet |
-| `age`      | `Integer` | Age of Pet |
-| `weight`   | `Float`   | Weight of Pet |
-
-<br />
-
-#### Update the data of a Pet
-
-```http
-  PUT /pets/${pet_id}
-```
-
-| Parameter  | Type      | Description                                      |
-| :--------  | :-------  | :-------------------------------- |
-| `body`     | `JSON`    | **Required**. JSON object containing pet details |
-| `user_id`  | `string`  | ID associated with user account (Front End obtains this from Auth0)|
-| `pet_id`   | `string`  | **Required**. ID associated with the pet (Front End generates this with nanoid)|
-| `name`     | `string`  | Name of Pet |
-| `species`  | `boolean` | Species of pet true is Cat, false is Dog |
-| `breed`    | `string`  | Breed of Pet |
-| `age`      | `Integer` | Age of Pet |
-| `weight`   | `Float`   | Weight of Pet |
-
-<br />
-
-### Symptoms Table
-
-<br/>
-
-#### Get all symptoms associated with a pet
-
-
-```http
-  GET /symptoms/${pet_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `pet_id`  | `string` | **Required**. ID associated with pet |
-
-<br/>
-
-#### Get all incidents of a particular symptom associated with a pet
-
-```http
-  GET /symptoms/${pet_id}?symptoms_id=${symptoms_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `pet_id`  | `string` | **Required**. ID associated with pet |
-| `symptoms_id`  | `string` | **Required**. ID associated with a symptom entry|
-
-<br/>
-
-#### Post the data for a new symptom
-
-```http
-  POST /symptoms
-```
-
-| Parameter  | Type      | Description                                      |
-| :--------  | :-------  | :-------------------------------- |
-| `body`     | `JSON`    | **Required**. JSON object containing symptom details |
-| `user_id`  | `string`  | **Required**. ID associated with user account (Front End obtains this from Auth0)|
-| `pet_id`   | `string`  | **Required**. ID associated with the pet (Front End generates this with nanoid)|
-| `symptoms_id`   | `string`  | **Required**. ID associated with the symptom (Front End generates this with nanoid)|
-| `incident_id`   | `string`  | **Required**. ID associated with the incident (Front End generates this with nanoid)|
-| `symptoms`     | `string`  | **Required**. Title/Name of the symptom |
-| `date`  | `string` | **Required**. Date that the incident occured |
-| `time`    | `string`  | **Required**. Time that the incident occured |
-| `description`      | `string` | **Required**. More detailed explanation of the symptom |
-
-
-<br />
-
-#### Delete a symptom and all its incidents
-
-```http
-  Delete /symptoms/${symptoms_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `symptoms_id`  | `string` | **Required**. ID associated with a symptom entry|
-
-<br/>
-
-### Reminders Table
-
-<br/>
-
-#### Get all reminders belonging to a pet
-
-
-```http
-  GET /reminders/pet_id=${pet_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `pet_id` | `string` | **Required**. ID associated with a pet |
-
-<br/>
-
-#### Post the data for a new reminder
-
-```http
-  POST /reminders
-```
-
-| Parameter  | Type      | Description                                      |
-| :--------  | :-------  | :-------------------------------- |
-| `body`     | `JSON`    | **Required**. JSON object containing symptom details |
-| `user_id`  | `string`  | **Required**. ID associated with user account (Front End obtains this from Auth0)|
-| `pet_id`   | `string`  | **Required**. ID associated with the pet (Front End generates this with nanoid)|
-| `reminder_id`   | `string`  | **Required**. ID associated with the reminder (Front End generates this with nanoid)|
-| `task`     | `string`  | **Required**. Title/Name of the task |
-| `date`  | `string` | **Required**. Date that the task needs to be completed by |
-| `completed`  | `boolean` | **Required**. Whether the task has been completed (default value is false) |
-| `repeated`  | `boolean` | **Required**. Whether the task is done needs to be done multiple times |
-| `frequency`      | `string` | How often the task needs to be completed Suitable entries: (null, 1, 7, 30, 365)|
-
-<br />
-
-#### Update the completed parameter of a reminder
-
-```http
-  Patch /reminders/${reminder_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `reminder_id`  | `string` | **Required**. ID associated with a reminder entry|
-| `body`     | `JSON`    | **Required**. JSON object containing symptom details |
-| `completed`  | `boolean` | **Required**. Whether the task has been completed  |
-
-<br/>
-
-#### Delete a reminder
-
-```http
-  Delete /reminders/${reminder_id}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `reminder_id`  | `string` | **Required**. ID associated with a reminder entry|
-
-<br/>
 ---
-
-<br />
 
 ## **_Appendix📝_**
 
