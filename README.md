@@ -142,7 +142,7 @@ To run tests, run the following command
 
 <br/>
 
-#### Get a specific restaurant
+#### Get a specific restaurant and reviews
 
 ```http
   GET /api/v1/restaurants/:id
@@ -151,10 +151,70 @@ To run tests, run the following command
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id` | `Integer` | **Required**. Restaurant ID associated with restaurant |
+| `restaurant_id` | `Integer` | **Required**. Reviews restaurant_id which is the foreign key referencing ID of restaurant |
 
 <br />
 
-WIP
+#### Post a new restaurant
+
+```http
+  POST /api/v1/restaurants
+```
+
+| Parameter  | Type      | Description                                      |
+| :--------  | :-------  | :-------------------------------- |
+| `body`     | `JSON`    | **Required**. JSON object containing restaurant details |
+| `name`  | `string`  | **Required**. Name associated with restaurant|
+| `location`   | `string`  | **Required**. Location associated with the restaurant|
+| `price_range`   | `Integer`  | **Required**. Price range associated with restaurant|
+
+
+<br />
+
+#### Post a new review in a specific restaurant
+
+```http
+  POST /api/v1/restaurants/:id/addReview
+```
+
+| Parameter  | Type      | Description                                      |
+| :--------  | :-------  | :-------------------------------- |
+| `body`     | `JSON`    | **Required**. JSON object containing restaurant details |
+| `restaurant_id`  | `Integer`  | **Required**. Reviews table restaurant_id associated with main restaurants table ID|
+| `name`   | `string`  | **Required**. Name associated with the person posting a review|
+| `review`   | `Integer`  | **Required**. Review associated with restaurant|
+| `rating`   | `Integer`  | **Required**. Rating associated with restaurant|
+
+
+<br />
+
+#### Update the data for a new restaurant
+
+```http
+  PUT /api/v1/restaurants
+```
+
+| Parameter  | Type      | Description                                      |
+| :--------  | :-------  | :-------------------------------- |
+| `body`     | `JSON`    | **Required**. JSON object containing restaurant details |
+| `id`   | `Integer`  | **Required**. ID associated with restaurant|
+| `name`  | `string`  | **Required**. Name associated with restaurant|
+| `location`   | `string`  | **Required**. Location associated with the restaurant|
+| `price_range`   | `Integer`  | **Required**. Price range associated with restaurant|
+
+<br />
+
+#### Delete the data for a new restaurant
+
+```http
+  DELETE /api/v1/restaurants/:id
+```
+
+| Parameter  | Type      | Description                                      |
+| :--------  | :-------  | :-------------------------------- |
+| `id`   | `Integer`  | **Required**. ID associated with restaurant|
+
+<br />
 
 ---
 
