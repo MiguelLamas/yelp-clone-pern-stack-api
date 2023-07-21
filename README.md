@@ -218,7 +218,7 @@ To run tests, run the following command
 
 ---
 
-## **_Appendix📝_**
+## **Appendix:**
 
 </br>
 
@@ -226,3 +226,5 @@ To run tests, run the following command
 - [Express.js](https://expressjs.com/)
 - [React](https://react.dev/)
 - [Node.js](https://nodejs.org/en/)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Render](https://render.com/)
