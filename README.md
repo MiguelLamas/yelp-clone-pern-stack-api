@@ -222,6 +222,7 @@ To run tests, run the following command
 
 </br>
 
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](https://expressjs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Express.js](https://expressjs.com/)
+- [React](https://react.dev/)
+- [Node.js](https://nodejs.org/en/)
